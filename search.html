@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical/Pet Search - VirtualVet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>VirtualVet</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="search.html">Medical/Pet Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search">
+            <h2>Medical/Pet Search</h2>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search for symptoms or illnesses..." required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results"></div>
+        </section>
+
+        <section id="chatbot">
+            <h2>Chat with VirtualVet</h2>
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <form id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Ask a question..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VirtualVet. All rights reserved.</p>
+    </footer>
+</body>
+</html>
