@@ -1,9 +1,16 @@
+html, body {
+    height: 100%; /* Ensure the page takes up the full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5dc; /* Light beige */
     color: #4b2e2e; /* Coffee brown */
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Arrange content in a column */
 }
 
 header {
@@ -32,6 +39,7 @@ nav a {
 
 main {
     padding: 2rem;
+    flex: 1; 
 }
 
 section {
@@ -53,37 +61,105 @@ section {
     border-radius: 50%;
 }
 
-form {
+
+
+/* 🌿 Contact Form Styling */
+
+/* Form Labels */
+label {
+    font-size: 17px;
+    color: #2a2a2a;
+    margin-bottom: 5px;
+    display: block;
+    width: 200px;
+    margin-right: 15px;
+}
+
+/* Contact Page Styling */
+.contact-container {
+    max-width: 500px;
+    margin: 50px auto 50px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+        
+.form-group {
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    align-items: center;
 }
 
-form label {
-    font-weight: bold;
+/* 🌿 Fix input field visibility */
+input, textarea, select{
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.991); 
+    color: #2a2a2a;
+    transition: all 0.3s ease-in-out;
 }
 
-form input, form textarea, form button {
-    padding: 0.5rem;
-    border: 1px solid #4b2e2e;
-    border-radius: 5px;
+/* 🌿 Highlight on focus */
+input:focus, textarea:focus {
+    border-color: #814439;
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form button {
-    background-color: #4b2e2e;
-    color: #ffffff;
+/* 🌿 Contact Form Submit Button */
+button {
+    background-color: #5d3a34;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-form button:hover {
-    background-color: #6b4e4e;
+button:hover {
+    background-color: #ccab94;
+    color: #4a352b;
 }
+
+/* 🌿 Success Message */
+#success-message {
+    display: none;
+    text-align: center;
+    color: #413126;
+    font-weight: bold;
+    background-color: #ddba9e;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* 🌿 Show message when form is submitted */
+#success-message.active {
+    display: block;
+}
+
+.error {
+    color: #dd1818;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+
 
 footer {
     background-color: #4b2e2e;
     color: #ffffff;
     text-align: center;
     padding: 1rem;
+    
 }
 
 #search-results {
