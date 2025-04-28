@@ -1,38 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('VirtualVet website loaded successfully!');
-    // Add interactivity here if needed
+// server.js
+const express = require('express');
+const path = require('path');
+const dotenv = require('dotenv');
+const cors = require('cors');
 
-    // Search functionality
-    const searchForm = document.getElementById('search-form');
-    const searchResults = document.getElementById('search-results');
-    if (searchForm) {
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const query = document.getElementById('search-input').value;
-            searchResults.innerHTML = `<p>Searching for "${query}"...</p>`;
-            // Simulate search results
-            setTimeout(() => {
-                searchResults.innerHTML = `<p>Results for "${query}":</p><ul><li>Example result 1</li><li>Example result 2</li></ul>`;
-            }, 1000);
-        });
-    }
+// Load environment variables from .env.local
+dotenv.config({ path: '.env.local' });
 
-    // Chatbot functionality
-    const chatForm = document.getElementById('chat-form');
-    const chatMessages = document.getElementById('chat-messages');
-    if (chatForm) {
-        chatForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const userMessage = document.getElementById('chat-input').value;
-            const userBubble = `<div class="chat-bubble user">${userMessage}</div>`;
-            chatMessages.innerHTML += userBubble;
-            document.getElementById('chat-input').value = '';
-            // Simulate chatbot response
-            setTimeout(() => {
-                const botResponse = `<div class="chat-bubble bot">I'm here to help with your pet's health!</div>`;
-                chatMessages.innerHTML += botResponse;
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1000);
-        });
-    }
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Use middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
+
+// API endpoint to get the API key (only for development)
+app.get('/api/config', (req, res) => {
+  // Only send the API key to requests from localhost
+  const origin = req.get('origin') || '';
+  if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
+    res.json({
+      apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY
+    });
+  } else {
+    res.status(403).json({ error: 'Unauthorized' });
+  }
+});
+
+// Serve the frontend
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });

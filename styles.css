@@ -63,7 +63,7 @@ section {
 
 
 
-/* 🌿 Contact Form Styling */
+/* Contact Form Styling */
 
 /* Form Labels */
 label {
@@ -96,6 +96,7 @@ label {
 input, textarea, select{
     width: 100%;
     padding: 12px;
+    margin: 10px;
     font-size: 17px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -171,38 +172,74 @@ footer {
 }
 
 #chat-container {
-    margin-top: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    background-color: #f9f9f9;
+    max-width: 500px;
+    margin: 20px auto 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
-#chat-messages {
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-.chat-bubble {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 10px;
+/* General chat bubble styling */
+.message {
     max-width: 70%;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    display: inline-block;
+    position: relative;
 }
 
-.chat-bubble.user {
-    background-color: #4b2e2e;
-    color: #fff;
-    align-self: flex-end;
-}
-
-.chat-bubble.bot {
-    background-color: #ddd;
-    color: #000;
+/* Gemini (AI) messages - white background */
+.message.ai {
+    background-color: white;
+    color: black;
     align-self: flex-start;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* User messages - light brown background */
+.message.user {
+    background-color: #f4e3d7;
+    color: black;
+    align-self: flex-end;
+    border: 1px solid #d3b8a5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat container styling */
+#conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#user-input {
+    width: 75%;
+    max-height: 20px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
 }
