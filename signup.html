@@ -5,55 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - VirtualVet</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
-        <h1>VirtualVet</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="profile.html">My Profile</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="search.html">Medical/Pet Search</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <img src="images/virtualvet_logo.png" alt="VirtualVet Logo" id="logo">
+            <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="search.html">Medical/Pet Search</a></li>
+                    <li class="active"><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="signup">
-            <h2>Sign Up</h2>
-            <form method="POST" action="http://localhost:3000/signup">
-            <!-- <form method="POST" action="/signup"> -->
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            
-                <fieldset>
-                    <legend>Pet Information:</legend>
-            
-                    <label for="pet-name">Pet Name:</label>
-                    <input type="text" id="pet-name" name="petName" required>
-            
-                    <label for="pet-breed">Pet Breed:</label>
-                    <input type="text" id="pet-breed" name="petBreed" required>
-            
-                    <label for="pet-age">Pet Age:</label>
-                    <input type="number" id="pet-age" name="petAge" required>
-                </fieldset>
-            
-                <button type="submit">Sign Up</button>
-            </form>
-            
+        <section id="contact-form">
+            <div class="contact-container">
+                <h1>Sign Up</h1>
+                <form method="POST" action="http://localhost:3000/signup">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <fieldset>
+                        <legend>Pet Information:</legend>
+                        <div class="form-group">
+                            <label for="pet-name">Pet Name:</label>
+                            <input type="text" id="pet-name" name="petName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pet-breed">Pet Breed:</label>
+                            <input type="text" id="pet-breed" name="petBreed" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pet-age">Pet Age:</label>
+                            <input type="number" id="pet-age" name="petAge" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 VirtualVet. All rights reserved.</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -19,22 +19,99 @@ header {
     padding: 1rem;
     text-align: center;
 }
-
-header h1 {
-    margin: 0;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+#logo {
+    max-height: 50px; /* Adjust as needed */
+}
+
+#navbar ul {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    margin: 0 10px;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+/* Hide the nav and show the hamburger menu on small screens */
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+}
+
+/* Highlight Sign Up */
+nav ul li.active a {
+    color: #421d16; 
+    background-color: #edc2ad; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    text-decoration: none; 
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+        color: #ffffff; /* Default color */
+        transition: color 0.3s ease-in-out;
+    }
+
+
+    #menu-toggle:hover {
+        color: #e3c4b4; /* Lighter color on hover */
+    }
+
+    #navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #ae744b;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 75%;
+        height: 100%; /* Make it extend the full height of the page */
+        z-index: 1000; /* Ensure it appears above other elements */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.497);
+    }
+
+    #navbar.active {
+        display: flex;
+    }
+
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0; /* Remove gap to use borders instead */
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px; /* Add padding */
+        border-bottom: 1px solid #ffffff; /* Add a line between items */
+    }
+
+    nav ul li:last-child {
+        border-bottom: none; /* Remove the line after the last item */
+    }
 }
 
 main {
@@ -153,7 +230,19 @@ button:hover {
     display: none;
 }
 
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
 
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4b2e2e;
+    padding: 0 10px;
+}
 
 footer {
     background-color: #4b2e2e;
@@ -243,3 +332,4 @@ footer {
     cursor: pointer;
     font-size: 20px;
 }
+
