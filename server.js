@@ -44,7 +44,6 @@ app.post('/signup', async (req, res) => {
                 createdAt: new Date()
             });
             res.redirect('/signup_success.html');
-            //res.send('Signup successful!');
         } catch (error) {
             console.error('Error inserting signup:', error);
             res.status(500).send('Error saving signup information.');
