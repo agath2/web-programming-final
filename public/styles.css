@@ -108,23 +108,33 @@ nav ul li.active a {
 
 /* Homepage Layout */
 .home-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Space between columns */
     padding: 4rem 2rem;
 }
 
 .left-content {
-    flex: 1;
+    grid-column: 1; /* Left content in the first column */
 }
 
 .right-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    grid-column: 2; /* Right content in the second column */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .left-content, .right-content {
+        grid-column: 1; /* Both take up the full width */
+    }
+
+    .floating-dog {
+        width: 300px; /* Scale down the GIF for smaller screens */
+    }
 }
 
 /* Cards */
@@ -186,7 +196,7 @@ nav ul li.active a {
 
 /* Forms (all pages) */
 input, textarea, select {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     margin: 10px 0;
     font-size: 17px;
@@ -303,6 +313,7 @@ footer {
 .profile-section {
     text-align: center;
     padding: 4rem 2rem;
+    
 }
 
 .profile-section h2 {
@@ -323,7 +334,7 @@ footer {
     border-radius: 20px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    text-align: center;
+    text-align: center;    
 }
 
 .profile-pet-gif {
@@ -763,8 +774,6 @@ h3 {
     text-align: left;
 }
 
-
-
 .benefit-item p {
     color: #7f8c8d;
     font-size: 1em;
@@ -794,15 +803,36 @@ h3 {
     margin-right: auto;
 }
 
+/* Pricing Page - Mobile Friendly */
+@media (max-width: 768px) {
+    .benefits-list {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 2rem; /* Space between cards */
+    }
+
+
+}
+
 /* Profile Dashboard */
+.profile-dash {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
 .profile-dashboard {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); 
     gap: 2rem;
     margin-top: 3rem;
 }
 
-.dashboard-card {
+.dashboard-card, .calendar-card, .pet-card {
+    width: 300px;
+    height: 340px;
+
     background: #fff8f0;
     padding: 2rem;
     border-radius: 20px;
@@ -810,9 +840,29 @@ h3 {
     text-align: center;
 }
 
+/* Profile Page - Mobile Friendly */
+@media (max-width: 768px) {
+    .profile-dash {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1.5rem;
+    }
+
+    .profile-dashboard {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1.5rem;
+    }
+
+    .dashboard-card, .calendar-card, .pet-card {
+        width: 90%; /* Ensure the cards fit within the screen */
+        max-width: 400px; /* Optional: Set a maximum width */
+    }
+}
+
 /* Smaller Calendar */
 .calendar {
-    margin: 0 auto;
+    margin: auto;
     font-size: 0.8rem; /* Reduce font size */
     width: 200px; /* Set a fixed width */
 }
@@ -845,4 +895,36 @@ h3 {
     max-width: 300px; /* Limit the width */
     height: 200px; /* Set a fixed height */
     margin: 0 auto; /* Center the graph */
+}
+
+/* Mobile-friendly Home Page */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .left-content, .right-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .dog-container {
+        margin-bottom: 0;
+    }
+
+    .floating-dog {
+        width: 300px; /* Scale down the GIF */
+    }
+
+    .features-card, .testimonials-card, .cta-card {
+        margin-bottom: 1.5rem;
+        width: 90%; /* Ensure cards fit within the screen */
+    }
+
+    .side-cta {
+        margin-top: 20px;
+        width: 90%; /* Adjust width for smaller screens */
+    }
 }
