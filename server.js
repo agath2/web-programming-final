@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const uri = 'mongodb+srv://agathayanghi:testTESTtest@clusterdemo.hfznyhl.mongodb.net/?retryWrites=true&w=majority&appName=Clusterdemo';
 const client = new MongoClient(uri);
