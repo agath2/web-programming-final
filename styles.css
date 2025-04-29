@@ -355,6 +355,10 @@ footer {
     text-align: center;
 }
 
+.wrap-form {
+    text-align: left;
+}
+
 .contact-card h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
@@ -656,7 +660,7 @@ footer {
 }
 
 h2, h3 {
-    color: #2c3e50;
+    color: #4b2e2e;
 }
 
 .about-description {
@@ -669,7 +673,7 @@ h3 {
     margin-top: 30px;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #34495e;
+    color: #4b2e2e;
 }
 
 /* Team Grid */
@@ -730,12 +734,12 @@ h3 {
 .core-value h4 {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #2980b9;
+    color: #4b2e2e;
 }
 
 .core-value p {
     font-size: 1rem;
-    color: #7f8c8d;
+    color: #4b2e2e;
     line-height: 1.5;
 }
 
@@ -759,11 +763,7 @@ h3 {
     text-align: left;
 }
 
-.benefit-item h4 {
-    color: #2980b9;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
+
 
 .benefit-item p {
     color: #7f8c8d;
@@ -771,20 +771,20 @@ h3 {
 }
 
 #why-choose {
-    color: #2980b9;
+    color: #4b2e2e;
     font-size: 2.5em;
     font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #2980b9;
+    border-bottom: 3px solid #4b2e2e;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #why-choose + p {
-    color: #7f8c8d;
+    color: #4b2e2e;
     font-size: 1.2em;
     line-height: 1.7;
     text-align: center;
