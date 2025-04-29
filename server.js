@@ -54,5 +54,5 @@ app.post('/signup', async (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Heroku is using port: ${process.env.PORT}`);
 });
