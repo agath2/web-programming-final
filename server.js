@@ -25,17 +25,18 @@ connectDB();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname)));  
+app.use(express.static(path.join(__dirname, 'public'))); 
 
 // Handle form submission
 app.post('/signup', async (req, res) => {
-        const { name, email, petName, petBreed, petAge } = req.body;
-    
+        const { name, email, password, petName, petBreed, petAge } = req.body;
+
         try {
             const signupCollection = db.collection('user_profile');
             await signupCollection.insertOne({
                 name: name,
                 email: email,
+                password: password,
                 petInfo: {
                     name: petName,
                     breed: petBreed,
