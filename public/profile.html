@@ -91,11 +91,6 @@
                 <div class="profile-pet-card">
                     <img src="images/skateboarding.gif" alt="Two playful dogs" class="profile-pet-gif">
                     <p class="pet-name">Your Pet's Information Will Appear Here!</p>
-                    <p><strong>Name:</strong> <span id="name"></span></p>
-                    <p><strong>Email:</strong> <span id="email"></span></p>
-                    <p><strong>Pet Name:</strong> <span id="petName"></span></p>
-                    <p><strong>Pet Breed:</strong> <span id="petBreed"></span></p>
-                    <p><strong>Pet Age:</strong> <span id="petAge"></span></p>
                 </div>
             </div>
         </section>
@@ -105,24 +100,5 @@
         <p>&copy; 2025 VirtualVet. All rights reserved.</p>
     </footer>
     <script src="scripts.js"></script>
-    <script>
-        // Fetch user profile data from the server
-        window.onload = function() {
-            fetch('/profile')
-                .then(response => response.json())
-                .then(data => {
-                    // Populate the profile fields with user data
-                    document.getElementById('name').innerText = data.name;
-                    document.getElementById('email').innerText = data.email;
-                    document.getElementById('petName').innerText = data.petInfo.name;
-                    document.getElementById('petBreed').innerText = data.petInfo.breed;
-                    document.getElementById('petAge').innerText = data.petInfo.age;
-                })
-                .catch(error => {
-                    console.error('Error fetching user profile:', error);
-                    alert('There was an error loading your profile.');
-                });
-        };
-    </script>
 </body>
 </html>
