@@ -1,5 +1,7 @@
+/* Import Quicksand font */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
+/* Global styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -10,9 +12,9 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* margin-left: 30px; */
 }
 
+/* Header */
 header {
     background-color: #4b2e2e;
     padding: 1rem 2rem;
@@ -28,6 +30,7 @@ header {
     max-height: 50px;
 }
 
+/* Navigation */
 #navbar ul {
     display: flex;
     list-style: none;
@@ -58,6 +61,7 @@ nav ul li.active a {
     padding: 8px 16px;
 }
 
+/* Responsive Navigation */
 #menu-toggle {
     display: none;
     font-size: 24px;
@@ -105,35 +109,35 @@ nav ul li.active a {
 /* Homepage Layout */
 .home-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 2rem; 
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Space between columns */
     padding: 4rem 2rem;
 }
 
 .left-content {
-    grid-column: 1; 
-    margin-left: 30px;
+    grid-column: 1; /* Left content in the first column */
 }
 
 .right-content {
-    grid-column: 2; 
+    grid-column: 2; /* Right content in the second column */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .home-container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* Single column for smaller screens */
     }
 
     .left-content, .right-content {
-        grid-column: 1; 
+        grid-column: 1; /* Both take up the full width */
     }
 
     .floating-dog {
-        width: 300px; 
+        width: 300px; /* Scale down the GIF for smaller screens */
     }
 }
 
+/* Cards */
 .features-card, .testimonials-card, .cta-card {
     background: #fff8f0;
     padding: 2rem;
@@ -153,7 +157,6 @@ nav ul li.active a {
     text-align: center;
     z-index: 1;
     margin-top: 50px;
-    margin-left: 53px;
 }
 
 /* Dog container */
@@ -165,7 +168,6 @@ nav ul li.active a {
     justify-content: center;
     z-index: 2;
     margin-bottom: -170px;
-    margin-left: 65px;
 }
 
 .floating-dog {
@@ -174,7 +176,6 @@ nav ul li.active a {
     pointer-events: none;
     position: relative;
     bottom: 0;
-    /* margin-left: 70px; */
 }
 
 /* CTA Button */
@@ -334,7 +335,6 @@ footer {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
     display: inline-block;
     text-align: center;    
-    /* margin-left: 80px; */
 }
 
 .profile-pet-gif {
