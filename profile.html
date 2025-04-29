@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile - VirtualVet</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -33,9 +34,64 @@
                 Welcome to your pet's profile! Here you can view and manage their health history, appointments, and favorite activities.
             </p>
 
-            <div class="profile-pet-card">
-                <img src="images/skateboarding.gif" alt="Two playful dogs" class="profile-pet-gif">
-                <p class="pet-name">Your Pet's Information Will Appear Here!</p>
+            
+            <div class="profile-dashboard">
+                <div class="dashboard-card calendar-card">
+                    <h3>Upcoming Vet Appointments</h3>
+                    <div class="calendar">
+                        <p>April 2025</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td class="highlight">9</td>
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dashboard-card graph-card">
+                    <h3>Pet's Weight Progress</h3>
+                    <canvas id="weightGraph"></canvas>
+                </div>
+                <div class="profile-pet-card">
+                    <img src="images/skateboarding.gif" alt="Two playful dogs" class="profile-pet-gif">
+                    <p class="pet-name">Your Pet's Information Will Appear Here!</p>
+                </div>
             </div>
         </section>
     </main>

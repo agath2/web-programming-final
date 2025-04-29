@@ -793,3 +793,56 @@ h3 {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Profile Dashboard */
+.profile-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.dashboard-card {
+    background: #fff8f0;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Smaller Calendar */
+.calendar {
+    margin: 0 auto;
+    font-size: 0.8rem; /* Reduce font size */
+    width: 200px; /* Set a fixed width */
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    border: 1px solid #d8bfa0;
+    padding: 5px; /* Reduce padding */
+    text-align: center;
+}
+
+.calendar .highlight {
+    background-color: #faebdd;
+    font-weight: bold;
+    color: #4b2e2e;
+    border-radius: 50%;
+}
+
+.graph-card canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Smaller Graph */
+.graph-card canvas {
+    max-width: 300px; /* Limit the width */
+    height: 200px; /* Set a fixed height */
+    margin: 0 auto; /* Center the graph */
+}
