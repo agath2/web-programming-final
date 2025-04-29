@@ -2,6 +2,7 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser');
 const path = require('path');
+const { ObjectId } = require('mongodb');
 
 const app = express();
 const PORT = process.env.PORT;
@@ -44,7 +45,9 @@ app.post('/signup', async (req, res) => {
                 },
                 createdAt: new Date()
             });
-            res.redirect('/signup_success.html');
+
+            // Redirect to signup_success.html with the user ID in the query string
+            res.redirect(`/signup_success.html?id=${result.insertedId}`);
         } catch (error) {
             console.error('Error inserting signup:', error);
             res.status(500).send('Error saving signup information.');
@@ -55,4 +58,27 @@ app.post('/signup', async (req, res) => {
 // Start server
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
+});
+
+// route to fetch user by ID
+app.get('/api/user', async (req, res) => {
+    const userId = req.query.id;
+
+    if (!userId) {
+        return res.status(400).send('User ID is required');
+    }
+
+    try {
+        const signupCollection = db.collection('user_profile');
+        const user = await signupCollection.findOne({ _id: new ObjectId(userId) });
+
+        if (!user) {
+            return res.status(404).send('User not found');
+        }
+
+        res.json(user);
+    } catch (error) {
+        console.error('Error fetching user:', error);
+        res.status(500).send('Server error');
+    }
 });
