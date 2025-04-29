@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5; url=index.html">
+    <!--<meta http-equiv="refresh" content="5; url=index.html">-->
     <title>Sign Up Success - VirtualVet</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,7 +22,7 @@
                 <h1>🎉 Sign Up Successful!</h1>
                 <p>Thank you for joining VirtualVet!</p>
                 <p>You will be redirected to the homepage shortly.</p>
-                <a href="profile.html" class="cta-button">Go to Profile</a>
+                <a id="profileLink" href="profile.html" class="cta-button">Go to Profile</a>
             </div>
         </section>
     </main>
@@ -31,4 +31,27 @@
         <p>&copy; 2025 VirtualVet. All rights reserved.</p>
     </footer>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const userId = params.get('id');
+  
+      if (userId) {
+        // Update the profile link
+        const profileLink = document.getElementById('profileLink');
+        if (profileLink) {
+          profileLink.href = `profile.html?id=${userId}`;
+        }
+  
+        // Optional auto-redirect after 5 seconds
+        setTimeout(() => {
+          window.location.href = `profile.html?id=${userId}`;
+        }, 5000);
+      } else {
+        console.error('User ID not found in URL.');
+      }
+    });
+  </script>
+
 </html>
