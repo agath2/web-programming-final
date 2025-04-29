@@ -34,7 +34,7 @@ app.post('/signup', async (req, res) => {
 
         try {
             const signupCollection = db.collection('user_profile');
-            await signupCollection.insertOne({
+            const result = await signupCollection.insertOne({
                 name: name,
                 email: email,
                 password: password,
